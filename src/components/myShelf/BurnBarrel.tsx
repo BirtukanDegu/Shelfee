@@ -4,7 +4,7 @@ import { Dispatch, SetStateAction, useState, DragEvent } from "react";
 const BurnBarrel = ({
     setBooks,
   }: {
-    setBooks: Dispatch<SetStateAction<BookType[]>>;
+    setBooks: Dispatch<SetStateAction<Book[]>>;
   }) => {
     const [active, setActive] = useState(false);
   

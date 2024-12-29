@@ -6,9 +6,9 @@ import AddBook from "./AddBook";
 type ColumnProps = {
     title: string;
     headingColor: string;
-    books: BookType[];
+    books: Book[];
     column: ColumnType;
-    setBooks: Dispatch<SetStateAction<BookType[]>>;
+    setBooks: Dispatch<SetStateAction<Book[]>>;
   };
   
   const Column = ({
@@ -22,7 +22,17 @@ type ColumnProps = {
   
     const handleDragStart = (
       e: MouseEvent | TouchEvent | PointerEvent | React.DragEvent<HTMLDivElement>,
-      book: { title: string; id: string; column: string }
+      book: { 
+        id: string; 
+        column: string;
+        details:{
+          general: GeneralInfo;
+          bookDetails: BookDetails;
+          authorDetails: AuthorDetails;
+          bookSections: BookSections;
+          notes: Notes;
+        } 
+      }
     ) => {
       if ('dataTransfer' in e) {
         e.dataTransfer.setData("bookId", book.id);
@@ -148,7 +158,7 @@ type ColumnProps = {
             return <Book key={c.id} {...c} handleDragStart={handleDragStart} />;
           })}
           <DropIndicator beforeId={null} column={column} />
-          <AddBook column={column} setBooks={setBooks} />
+          {/* <AddBook column={column} setBooks={setBooks} /> */}
         </div>
       </div>
     );
