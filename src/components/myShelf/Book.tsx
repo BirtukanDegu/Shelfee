@@ -1,4 +1,3 @@
-import Image from "next/image";
 import DropIndicator from "./DropIndicator";
 import { motion } from "framer-motion";
 

@@ -1,7 +1,6 @@
 import { Dispatch, SetStateAction, useState, DragEvent } from "react";
 import DropIndicator from "./DropIndicator";
 import Book from "./Book";
-import AddBook from "./AddBook";
 
 type ColumnProps = {
     title: string;
