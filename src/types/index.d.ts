@@ -1,5 +1,6 @@
 interface AuthDataType {
-  username?: string;
+  firstName?: string;
+  lastName?: string;
   email: string;
   password: string;
   passwordConfirmation?: string;
@@ -12,6 +13,18 @@ interface BookType {
 }
 
 declare type ColumnType = "toRead" | "reading" | "done";
+
+interface Book {
+  id: string;
+  column: ColumnType;
+  details: {
+    general: GeneralInfo;
+    bookDetails: BookDetails;
+    authorDetails: AuthorDetails;
+    bookSections: BookSections;
+    notes: Notes;
+  }
+}
 
 interface GeneralInfo {
   bookName?: string | null;
@@ -60,4 +73,4 @@ type BookData = GeneralInfo &
   BookDetails &
   AuthorDetails &
   BookSections &
-  Notes;
+  Notes ;
