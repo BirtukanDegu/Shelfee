@@ -4,7 +4,20 @@ import BurnBarrel from "./BurnBarrel";
 import { DEFAULT_BOOKS } from "../../../constants";
 
 const Board = () => {
-  const [books, setBooks] = useState<BookType[]>(DEFAULT_BOOKS);
+  const [books, setBooks] = useState<BookType[]>([]);
+  const [hasChecked, setHasChecked] = useState(false);
+
+  useEffect (() => {
+    hasChecked && localStorage.setItem("books", JSON.stringify(books));
+  }, [books]);
+
+  useEffect(() => {
+    const cardData = localStorage.getItem("books");
+
+    setBooks(cardData ? JSON.parse(cardData) : [])
+
+    setHasChecked(true);
+  },[])
 
   return (
     <div className="flex h-full w-full gap-3 p-12">
