@@ -4,18 +4,11 @@
 import Header from "@/components/Header";
 import Hero from "@/components/LandingPage/Hero";
 import {
-  BarChart4,
-  CodeXml,
-  Download,
-  Hourglass,
-  Infinity,
   Linkedin,
   Sparkles,
   Plus,
   FolderSearch,
-  Rocket,
   Twitter,
-  User,
   Library,
   NotebookPen,
   Blocks,

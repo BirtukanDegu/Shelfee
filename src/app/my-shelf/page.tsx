@@ -1,9 +1,13 @@
-import React from 'react'
+'use client';
 
-const page = () => {
+import Board from "@/components/MyShelf/Bord";
+
+const MyShelf = () => {
   return (
-    <div className='text-black'>page</div>
-  )
-}
+    <div className="h-screen scrollbar w-full bg-neutral-900 text-neutral-50">
+      <Board />
+    </div>
+  );
+};
 
-export default page
+export default MyShelf;

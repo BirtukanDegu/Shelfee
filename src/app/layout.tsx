@@ -13,9 +13,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${marcellus.className} antialiased scrollbar`}
+        suppressHydrationWarning
       >
         {children}
       </body>
