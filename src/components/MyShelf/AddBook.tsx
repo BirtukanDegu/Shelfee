@@ -34,7 +34,7 @@ type AddBookProps = {
             <textarea
               onChange={(e) => setText(e.target.value)}
               autoFocus
-              placeholder="Add new task..."
+              placeholder="Add new book..."
               className="w-full rounded border border-brand-green/50 bg-brand-light-green/5 p-3 text-sm text-brand-green placeholder-brand-green/50 focus:outline-0"
             />
             <div className="mt-1.5 flex items-center justify-end gap-1.5">
