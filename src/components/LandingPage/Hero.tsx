@@ -1,6 +1,6 @@
 import React from "react";
 import { marcellus } from "@/fonts/font";
-import { motion, easeInOut } from "framer-motion";
+import { motion } from "framer-motion";
 
 
 function Hero() {
