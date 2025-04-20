@@ -22,8 +22,8 @@ const Board = () => {
   return (
     <div className="flex h-full w-full gap-3 p-12">
       <Column
-        title="Backlog"
-        column="backlog"
+        title="Wishlist"
+        column="wishlist"
         headingColor="text-brand-green"
         books={books}
         setBooks={setBooks}

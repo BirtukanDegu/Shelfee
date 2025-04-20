@@ -1,14 +1,14 @@
 export const DEFAULT_BOOKS: BookType[] = [
-    // BACKLOG
-    { title: "Atomic Habits by James Clear", id: "1", column: "backlog" },
-    { title: "Clean Code by Robert C. Martin", id: "2", column: "backlog" },
-    { title: "The Pragmatic Programmer by David Thomas", id: "3", column: "backlog" },
+    // WISHLIST
+    { title: "Atomic Habits by James Clear", id: "1", column: "wishlist" },
+    { title: "Clean Code by Robert C. Martin", id: "2", column: "wishlist" },
+    { title: "The Pragmatic Programmer by David Thomas", id: "3", column: "wishlist" },
 
     // QUEUE
     { title: "Deep Work by Cal Newport", id: "4", column: "que" },
     { title: "Designing Interfaces by Jenifer Tidwell", id: "5", column: "que" },
   
-    // DOING
+    // READING
     { title: "Don't Make Me Think by Steve Krug", id: "6", column: "doing" },
     { title: "The Alchemist by Paulo Coelho", id: "7", column: "doing" },
     { title: "The Subtle Art of Not Giving a F*ck by Mark Manson", id: "8", column: "doing" },

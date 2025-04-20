@@ -4,4 +4,4 @@ declare interface BookType {
   column: ColumnType;
 };
 
-declare type ColumnType = "backlog" | "que" | "doing" | "done";
+declare type ColumnType = "wishlist" | "que" | "doing" | "done";
