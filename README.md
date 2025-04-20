@@ -1,8 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📚 Shelfee
 
-## Getting Started
+**Shelfee** is a simple web application built to track your reading journey. Categorize your books into four columns — **Wishlist**, **To Read**, **In Progress**, and **Completed** — and manage them with an intuitive drag-and-drop interface.
 
-First, run the development server:
+Built with **Next.js**, **TypeScript**, and **Tailwind CSS**.
+
+---
+
+## 🚀 Features
+
+- 📥 Add books to your personal shelf
+- 📌 Organize books across four customizable categories:
+  - Wishlist
+  - To Read
+  - In Progress
+  - Completed
+- ✨ Drag-and-drop to move books across columns
+- 🗑️ BurnBarrel to delete books with style
+- 💾 Persistent storage using localStorage
+- 🧹 Clean UI powered by TailwindCSS
+
+---
+
+## 🛠 Tech Stack
+
+- [Next.js](https://nextjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- Native HTML5 drag-and-drop
+- LocalStorage for persistence
+
+---
+
+## 📦 Getting Started
+
+### Prerequisites
+
+Before you begin, ensure you have the following installed on your machine:
+
+- [Node.js](https://nodejs.org/) (LTS version)
+- [npm](https://www.npmjs.com/) or [Yarn](https://yarnpkg.com/)
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/your-username/bookshelf.git
+   cd bookshelf
+   ```
+
+2. Install dependencies
+
+Using npm:
+
+```bash
+npm install
+```
+
+Or using Yarn:
+
+```bash
+yarn install
+```
+
+4. Start development server
 
 ```bash
 npm run dev
@@ -14,23 +75,17 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the app in action.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+💡 Ideas for Improvement
+Add book covers and metadata via API (e.g., Google Books)
 
-## Learn More
+User authentication and cloud sync
 
-To learn more about Next.js, take a look at the following resources:
+Shareable public shelves
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Dark mode support
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+🧑‍💻 Author
+Made with ❤️ by Birtukan Degu
