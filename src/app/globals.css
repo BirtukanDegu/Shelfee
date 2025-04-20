@@ -5,17 +5,29 @@
   --foreground: #171717;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@theme {
+  --color-brand-green: #004632;
+  --color-brand-light-green: #bdd0a0;
+  --color-brand-cream: #fef8dd;
+  --color-brand-orange: #ff6a00;
+  --color-brand-red: #c7361c;
+  --color-brand-blue: #314b98;
+  --color-brand-pink: #f9cee1;
+  --color-brand-yellow: #ffd64d;
+
+  --breakpoint-*: initial; 
+  --breakpoint-xs: 480px; 
+  --breakpoint-sm: 768px; 
+  --breakpoint-md: 992px; 
+  --breakpoint-lg: 1200px; 
+  --breakpoint-xl: 1320px;
+  --breakpoint-2xl: 1920px;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #fbf4eb;
+    --foreground: #fbf4eb;
   }
 }
 
@@ -23,4 +35,19 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer components {
+  .scrollbar::-webkit-scrollbar {
+    @apply w-0;
+  }
+  .scrollbar::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  .scrollbar.scrollLight::-webkit-scrollbar-thumb {
+    @apply bg-[var(--color-accent)];
+  }
+  .scrollbar.scrollDark::-webkit-scrollbar-thumb {
+    @apply bg-[var(--color-background)];
+  }
 }
