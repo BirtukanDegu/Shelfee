@@ -35,18 +35,18 @@ type AddBookProps = {
               onChange={(e) => setText(e.target.value)}
               autoFocus
               placeholder="Add new task..."
-              className="w-full rounded border border-violet-400 bg-violet-400/20 p-3 text-sm text-neutral-50 placeholder-violet-300 focus:outline-0"
+              className="w-full rounded border border-brand-green/50 bg-brand-light-green/5 p-3 text-sm text-brand-green placeholder-brand-green/50 focus:outline-0"
             />
             <div className="mt-1.5 flex items-center justify-end gap-1.5">
               <button
                 onClick={() => setAdding(false)}
-                className="px-3 py-1.5 text-xs text-neutral-400 transition-colors hover:text-neutral-50"
+                className="px-3 py-1.5 text-xs text-brand-green transition-colors hover:text-brand-green/80 cursor-pointer"
               >
                 Close
               </button>
               <button
                 type="submit"
-                className="flex items-center gap-1.5 rounded bg-neutral-50 px-3 py-1.5 text-xs text-neutral-950 transition-colors hover:bg-neutral-300"
+                className="flex items-center gap-1.5 rounded bg-brand-green px-3 py-1.5 text-xs text-white transition-colors hover:bg-brand-green/80 cursor-pointer"
               >
                 <span>Add</span>
                 <Plus className="w-4 h-4"/>
@@ -57,7 +57,7 @@ type AddBookProps = {
           <motion.button
             layout
             onClick={() => setAdding(true)}
-            className="flex w-full items-center gap-1.5 px-3 py-1.5 text-xs text-neutral-400 transition-colors hover:text-neutral-50"
+            className="flex w-full items-center gap-1.5 px-3 py-1.5 text-xs text-brand-blue transition-all hover:text-brand-blue/80 hover:scale-105 duration-500 cursor-pointer"
           >
             <span>Add book</span>
             <Plus className="w-4 h-4"/>

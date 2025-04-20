@@ -127,7 +127,7 @@ type ColumnProps = {
       <div className="w-56 shrink-0">
         <div className="mb-3 flex items-center justify-between">
           <h3 className={`font-medium ${headingColor}`}>{title}</h3>
-          <span className="rounded text-sm text-neutral-400">
+          <span className={`rounded text-sm ${headingColor}`}>
             {filteredbooks.length}
           </span>
         </div>
@@ -136,7 +136,7 @@ type ColumnProps = {
           onDragOver={handleDragOver}
           onDragLeave={handleDragLeave}
           className={`h-full w-full transition-colors ${
-            active ? "bg-neutral-800/50" : "bg-neutral-800/0"
+            active ? "bg-brand-light-green/10" : "bg-brand-light-green/0"
           }`}
         >
           {filteredbooks.map((c) => {

@@ -24,28 +24,28 @@ const Board = () => {
       <Column
         title="Backlog"
         column="backlog"
-        headingColor="text-neutral-500"
+        headingColor="text-brand-green"
         books={books}
         setBooks={setBooks}
       />
       <Column
         title="Queue"
         column="que"
-        headingColor="text-yellow-200"
+        headingColor="text-brand-orange"
         books={books}
         setBooks={setBooks}
       />
       <Column
         title="In progress"
         column="doing"
-        headingColor="text-blue-200"
+        headingColor="text-brand-blue"
         books={books}
         setBooks={setBooks}
       />
       <Column
         title="Complete"
         column="done"
-        headingColor="text-emerald-200"
+        headingColor="text-green-600"
         books={books}
         setBooks={setBooks}
       />

@@ -32,8 +32,8 @@ const BurnBarrel = ({
         onDragLeave={handleDragLeave}
         className={`mt-10 grid h-56 w-56 shrink-0 place-content-center rounded border text-3xl ${
           active
-            ? "border-red-800 bg-red-800/20 text-red-500"
-            : "border-neutral-500 bg-neutral-500/20 text-neutral-500"
+            ? "border-brand-red bg-brand-red/20 text-brand-red"
+            : "border-brand-light-green bg-brand-light-green/5 text-brand-green"
         }`}
       >
         {active ? <Flame className="animate-bounce" /> : <Trash />}
