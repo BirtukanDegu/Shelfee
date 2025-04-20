@@ -20,8 +20,13 @@ type ColumnProps = {
   }: ColumnProps) => {
     const [active, setActive] = useState(false);
   
-    const handleDragStart = (e: DragEvent, book: BookType) => {
-      e.dataTransfer.setData("bookId", book.id);
+    const handleDragStart = (
+      e: MouseEvent | TouchEvent | PointerEvent | React.DragEvent<HTMLDivElement>,
+      book: { title: string; id: string; column: string }
+    ) => {
+      if ('dataTransfer' in e) {
+        e.dataTransfer.setData("bookId", book.id);
+      }
     };
   
     const handleDragEnd = (e: DragEvent) => {

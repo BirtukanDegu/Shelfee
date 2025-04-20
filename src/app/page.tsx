@@ -57,7 +57,7 @@ const Home = () => {
           </div>
           <div className="relative group">
             <h1 className="font-semibold text-3xl md:text-7xl text-center w-full border-t border-b py-6 border-dashed text-balance px-4 text-black border-gray-300">
-              <span className="">Let's build a lasting </span>
+              <span className="">Let&apos;s build a lasting </span>
               <span className="text-transparent bg-clip-text bg-gradient-to-br from-brand-green to-brand-light-green">
                 reading habit.
               </span>

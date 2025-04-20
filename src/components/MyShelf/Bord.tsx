@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react";
 import Column from "./Column";
 import BurnBarrel from "./BurnBarrel";
-import { DEFAULT_BOOKS } from "../../../constants";
+// import { DEFAULT_BOOKS } from "../../../constants";
 
 const Board = () => {
   const [books, setBooks] = useState<BookType[]>([]);
   const [hasChecked, setHasChecked] = useState(false);
 
   useEffect (() => {
-    hasChecked && localStorage.setItem("books", JSON.stringify(books));
+    if (hasChecked) {
+      localStorage.setItem("books", JSON.stringify(books));
+    }
   }, [books]);
 
   useEffect(() => {

@@ -1,5 +1,4 @@
-"use client";
-import React, { useState } from "react";
+import React from "react";
 import { marcellus } from "@/fonts/font";
 import { motion, easeInOut } from "framer-motion";
 
@@ -22,33 +21,33 @@ function Hero() {
     },
   };
 
-  const scale = {
-    initial: {
-      scaleX: 0,
-    },
-    animate: {
-      scaleX: 1,
-      transition: {
-        duration: 1,
-        ease: easeInOut,
-        delay: 0.7,
-      },
-    },
-  };
+  // const scale = {
+  //   initial: {
+  //     scaleX: 0,
+  //   },
+  //   animate: {
+  //     scaleX: 1,
+  //     transition: {
+  //       duration: 1,
+  //       ease: easeInOut,
+  //       delay: 0.7,
+  //     },
+  //   },
+  // };
 
-  const appear = {
-    initial: {
-      opacity: 0,
-    },
-    animate: {
-      opacity: 1,
-      transition: {
-        duration: 1,
-        ease: easeInOut,
-        delay: 0.7,
-      },
-    },
-  };
+  // const appear = {
+  //   initial: {
+  //     opacity: 0,
+  //   },
+  //   animate: {
+  //     opacity: 1,
+  //     transition: {
+  //       duration: 1,
+  //       ease: easeInOut,
+  //       delay: 0.7,
+  //     },
+  //   },
+  // };
 
   return (
         <div className="mx-auto">
