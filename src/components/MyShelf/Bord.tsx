@@ -12,9 +12,9 @@ const Board = () => {
   }, [books]);
 
   useEffect(() => {
-    const cardData = localStorage.getItem("books");
+    const bookData = localStorage.getItem("books");
 
-    setBooks(cardData ? JSON.parse(cardData) : [])
+    setBooks(bookData ? JSON.parse(bookData) : [])
 
     setHasChecked(true);
   },[])
