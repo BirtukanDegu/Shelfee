@@ -66,7 +66,7 @@ function Hero() {
               variants={rise}
               initial="initial"
               animate="animate"
-              className={`${marcellus.className} leading-[1] font-black text-center text-[4vw] sm:text-[3vw] text-transparent bg-clip-text bg-gradient-to-br from-brand-green to-brand-light-green`}
+              className={`${marcellus.className} leading-[1] font-black text-center text-3xl md:text-[46px] text-transparent bg-clip-text bg-gradient-to-br from-brand-green to-brand-light-green`}
             >
               <span className=""></span>- Shelfee -
             </motion.h1>
