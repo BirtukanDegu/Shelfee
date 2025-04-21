@@ -24,7 +24,7 @@ function Header({ text }: Header) {
               exit="hidden"
               variants={gradual}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className={`text-[2vw] md:text-[3vw] leading-[1] font-semibold text-brand-green`}
+              className={`text-3xl md:text-[46px] leading-[1] font-semibold text-brand-green`}
             >
               {char === " " ? <span>&nbsp;</span> : char}
             </motion.h2>
