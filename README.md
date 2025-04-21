@@ -77,8 +77,8 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the app in action.
 
-
-💡 Ideas for Improvement
+---
+## 💡 Ideas for Improvement
 Add book covers and metadata via API (e.g., Google Books)
 
 User authentication and cloud sync
@@ -87,5 +87,6 @@ Shareable public shelves
 
 Dark mode support
 
-🧑‍💻 Author
+---
+## 🧑‍💻 Author
 Made with ❤️ by Birtukan Degu
