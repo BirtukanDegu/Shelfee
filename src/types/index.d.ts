@@ -1,3 +1,12 @@
+export interface AuthDataType {
+  firstName: string;
+  lastName: string;
+  username: string;
+  email: string;
+  password: string;
+  passwordConfirmation?: string;
+}
+
 declare interface BookType {
   title: string;
   id: string;
