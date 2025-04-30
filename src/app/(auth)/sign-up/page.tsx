@@ -1,5 +1,9 @@
+'use client';
+
 import React from 'react';
 import LoginRegisterForm from '@/components/LoginRegisterForm';
+import { AuthDataType } from '@/types';
+import { useRouter } from 'next/navigation';
 
 const content = {
   type: 'register',
@@ -8,12 +12,19 @@ const content = {
   btnText: 'Sign Up',
 };
 
-const SignIn = () => {
+const SignUp = () => {
+  const router = useRouter();
+
+  function handleRegister(data: AuthDataType) {
+    router.push('/profile');
+    console.log("Registration data:", data);
+  }
+
   return (
     <div className='flex items-center justify-center h-screen w-full'>
-      <LoginRegisterForm content={content} />
+      <LoginRegisterForm content={content} submitHandler={handleRegister} />
     </div>
   );
 };
 
-export default SignIn;
+export default SignUp;

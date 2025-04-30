@@ -1,7 +1,5 @@
 export interface AuthDataType {
-  firstName: string;
-  lastName: string;
-  username: string;
+  username?: string;
   email: string;
   password: string;
   passwordConfirmation?: string;
