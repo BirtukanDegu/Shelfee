@@ -198,7 +198,7 @@ const Home = () => {
           </motion.div>
           <div className="flex gap-4">
             <div className="border flex justify-center items-center w-10 h-10 border-dashed rounded-lg text-2xl text-brand-green border-gray-300">
-              <a target="_blank" href="">
+              <Link target="_blank" href="https://github.com/BirtukanDegu/Shelfee">
                 <svg
                   width="15"
                   height="15"
@@ -214,12 +214,12 @@ const Home = () => {
                     clipRule="evenodd"
                   ></path>
                 </svg>
-              </a>
+              </Link>
             </div>
             <div className="border flex justify-center items-center w-10 h-10 border-dashed rounded-lg text-2xl text-brand-green border-gray-300">
-              <a target="_blank" href="">
+              <Link target="_blank" href="https://www.linkedin.com/in/birtukan-degu-mulusew/">
                 <Linkedin />
-              </a>
+              </Link>
             </div>
             <div className="border flex justify-center items-center w-10 h-10 border-dashed rounded-lg text-2xl text-brand-green border-gray-300">
               <a target="_blank" href="">
