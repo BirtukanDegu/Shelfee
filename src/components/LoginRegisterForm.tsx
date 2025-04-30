@@ -1,6 +1,5 @@
 'use client';
 
-import { AuthDataType } from '@/types';
 import { AuthFormSchema, authFormSchema } from '@/utils/schemas';
 import { Lock, Mail, User } from 'lucide-react';
 import Image from 'next/image';
