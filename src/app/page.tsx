@@ -71,9 +71,9 @@ const Home = () => {
             >
               Take me to the shelf
             </Link>
-            <a
+            <Link
               target="_blank"
-              href=""
+              href="https://github.com/BirtukanDegu/Shelfee"
               className="inline-flex items-center justify-center whitespace-nowrap rounded-lg font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50  bg-brand-light-green text-brand-green hover:bg-brand-light-green/80 border px-6 py-1.5 text-lg gap-2 border-dashed border-gray-400"
             >
               <svg
@@ -91,7 +91,7 @@ const Home = () => {
                 ></path>
               </svg>
               Github
-            </a>
+            </Link>
           </div>
           <div className=" group border-b  border-dashed text-balance text-center w-full font-semibold border-gray-300 ">
             <div className="grid grid-cols-2 px-4 relative py-6 text-3xl md:text-7xl max-w-lg mx-auto">
