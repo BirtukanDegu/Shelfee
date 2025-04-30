@@ -1,4 +1,4 @@
-export interface AuthDataType {
+declare interface AuthDataType {
   username?: string;
   email: string;
   password: string;

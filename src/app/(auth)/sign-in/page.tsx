@@ -3,7 +3,6 @@
 import React from 'react';
 import { useRouter } from 'next/navigation';
 import LoginRegisterForm from '@/components/LoginRegisterForm';
-import { AuthDataType } from '@/types';
 
 const content = {
   type: 'login',
