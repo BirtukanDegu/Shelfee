@@ -1,12 +1,11 @@
 import React from "react";
-import MainPage from "@/components/NotFound/MainPage";
+import MainPage from "@/components/notFound/MainPage";
 
 function NotFound() {
-
   return (
     <div className="">
       <main>
-        <MainPage/>
+        <MainPage />
       </main>
     </div>
   );
