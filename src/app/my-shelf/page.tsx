@@ -1,6 +1,6 @@
 'use client';
 
-import Board from "@/components/myShelf/Bord";
+import Board from "@/components/myShelf/Board";
 
 const MyShelf = () => {
   return (
