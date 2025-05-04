@@ -16,9 +16,9 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import AnimatedCounter from "../components/landingPage/AnimatedCounter";
-import StarSpin from "@/components/notFound/StarSpin";
+import AnimatedCounter from "@/components/landingPage/AnimatedCounter";
 import { motion, easeInOut } from "framer-motion";
+import StarSpin from "@/components/notFound/StarSpin";
 // import DemoPreview from "./components/demoPreview";
 
 const Home = () => {
