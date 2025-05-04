@@ -23,23 +23,27 @@ const Board = () => {
 
   return (
     <div className="flex h-full w-full gap-3 p-12">
+      {/* <div className="flex-[1]">
+        <iframe 
+          className="border-radius:12px" 
+          src="https://open.spotify.com/embed/playlist/3VswAQmGj05xqNkBzyC5zM?utm_source=generator" 
+          width="300px" 
+          height="352" 
+          frameBorder="0" 
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+          loading="lazy">
+        </iframe>
+      </div> */}
       <Column
-        title="Wishlist"
-        column="wishlist"
-        headingColor="text-brand-green"
-        books={books}
-        setBooks={setBooks}
-      />
-      <Column
-        title="Queue"
-        column="que"
+        title="To be read"
+        column="toRead"
         headingColor="text-brand-orange"
         books={books}
         setBooks={setBooks}
       />
       <Column
-        title="In progress"
-        column="doing"
+        title="Reading"
+        column="reading"
         headingColor="text-brand-blue"
         books={books}
         setBooks={setBooks}

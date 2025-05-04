@@ -14,9 +14,9 @@ const Book = ({ title, id, column, handleDragStart }: BookProps) => {
         layoutId={id}
         draggable="true"
         onDragStart={(e) => handleDragStart(e, { title, id, column })}
-        className="cursor-grab rounded border border-brand-light-green bg-brand-light-green/5 p-3 active:cursor-grabbing"
+        className="cursor-grab rounded border border-brand-light-green dark:border-brand-light-green/10 bg-brand-light-green/5 p-3 active:cursor-grabbing"
       >
-        <p className="text-sm text-brand-green">{title}</p>
+        <p className="text-sm text-brand-green dark:text-brand-cream">{title}</p>
       </motion.div>
     </>
   );

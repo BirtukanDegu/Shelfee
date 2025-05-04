@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { marcellus } from "@/fonts/font";
+import { ThemeToggle } from "@/components/ThemeToggle";
+import CustomProvider from "@/context/provider";
 
 export const metadata: Metadata = {
   title: "Shelfee",
@@ -18,7 +20,12 @@ export default function RootLayout({
         className={`${marcellus.className} antialiased scrollbar`}
         suppressHydrationWarning
       >
-        {children}
+        <CustomProvider>
+          <div className="fixed top-4 right-4 z-50">
+            <ThemeToggle/>
+          </div>
+          {children}
+        </CustomProvider>
       </body>
     </html>
   );
