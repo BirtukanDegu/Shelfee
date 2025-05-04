@@ -1,5 +1,5 @@
-import React from "react";
 import MainPage from "@/components/notFound/MainPage";
+import React from "react";
 
 function NotFound() {
   return (
