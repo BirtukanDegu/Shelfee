@@ -61,7 +61,7 @@ const LanguageInput = () => {
                         value={language.value}
                         onSelect={(currentValue) => {
                           const updatedValue =
-                            currentValue === value ? "INR" : currentValue;
+                            currentValue === value ? "ET" : currentValue;
                           localStorage.setItem("language", updatedValue);
                           onChange(updatedValue);
                           setOpen(false);
@@ -104,7 +104,7 @@ const LanguageInput = () => {
         );
       }}
       name="language"
-      defaultValue={getInitialValue("language", "INR")}
+      defaultValue={getInitialValue("language", "ET")}
     />
   );
 };

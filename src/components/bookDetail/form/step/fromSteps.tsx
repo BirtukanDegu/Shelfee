@@ -1,18 +1,28 @@
 "use client";
 import StepButton from "../../ui/stepButton";
+import { useGetValue } from "@/hooks/useGetValue";
+import { getInitialValue } from "@/lib/getInitialValue";
 
 export const FormSteps = () => {
-  const stepValueDetails = getStepsDetails("1");
+  const stepValue = useGetValue("step", getInitialValue("step", "1"));
+  const stepValueDetails = getStepsDetails(stepValue);
 
   return (
     <div className="flex gap-9 justify-between">
       {stepValueDetails.previous ? (
-        <StepButton />
+        <StepButton
+          step={stepValueDetails.previous.step}
+          title={stepValueDetails.previous.title}
+          isPrevious
+        />
       ) : (
         <div className="flex-1" />
       )}
       {stepValueDetails.nextStep ? (
-        <StepButton />
+        <StepButton
+          step={stepValueDetails.nextStep.step}
+          title={stepValueDetails.nextStep.title}
+        />
       ) : (
         <div className="flex-1" />
       )}

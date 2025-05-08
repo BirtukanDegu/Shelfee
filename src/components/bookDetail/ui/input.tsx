@@ -7,9 +7,9 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 const Input = forwardRef<HTMLInputElement, InputProps>(
   ({ className, type, label, ...props }, ref) => (
     <div
-      className={`flex  items-center relative ${
+      className={`flex items-center relative ${
         label ? "h-[52px]" : "h-[42px]"
-      }`}
+      } ${className || ""}`}
     >
       {label && (
         <label
