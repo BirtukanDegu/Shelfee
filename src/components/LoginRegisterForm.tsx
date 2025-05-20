@@ -2,6 +2,7 @@
 
 import { AuthFormSchema, authFormSchema } from "@/lib/schemas";
 import { Lock, Mail, User } from "lucide-react";
+import { Google, Facebook } from 'iconsax-reactjs'
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -46,13 +47,15 @@ const LoginRegisterForm = ({
     try {
       if (content.type === "login") {
         submitHandler({
-          username: "",
+          firstName: "",
+          lastName: "",
           email: data.email,
           password: data.password,
         });
       } else if (content.type === "register") {
         submitHandler({
-          username: data.username,
+          firstName: data.firstName,
+          lastName: data.lastName,
           email: data.email,
           password: data.password,
         });
@@ -84,21 +87,40 @@ const LoginRegisterForm = ({
 
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 w-full">
           {content.type === "register" && (
-            <div>
-              <div className="flex items-center gap-2 border rounded-md px-3 py-2">
-                <User className="text-gray-400 dark:text-brand-cream" />
-                <input
-                  type="text"
-                  placeholder="Username"
-                  className="w-full h-full outline-none text-sm placeholder:text-gray-400 dark:placeholder:text-brand-cream/20 text-gray-700 dark:text-brand-cream"
-                  {...register("username")}
-                />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="md:col-span-1">
+                <div className="flex items-center gap-2 border rounded-md px-3 py-2">
+                  <User className="text-gray-400 dark:text-brand-cream" />
+                  <input
+                    type="text"
+                    placeholder="First name"
+                    className="w-full h-full outline-none text-sm placeholder:text-gray-400 dark:placeholder:text-brand-cream/20 text-gray-700 dark:text-brand-cream"
+                    {...register("firstName")}
+                  />
+                </div>
+                {errors.username && (
+                  <span className="text-brand-red text-sm">
+                    {errors.username?.message}
+                  </span>
+                )}
               </div>
-              {errors.username && (
-                <span className="text-brand-red text-sm">
-                  {errors.username?.message}
-                </span>
-              )}
+
+              <div className="md:col-span-1">
+                <div className="flex items-center gap-2 border rounded-md px-3 py-2">
+                  <User className="text-gray-400 dark:text-brand-cream" />
+                  <input
+                    type="text"
+                    placeholder="Last name"
+                    className="w-full h-full outline-none text-sm placeholder:text-gray-400 dark:placeholder:text-brand-cream/20 text-gray-700 dark:text-brand-cream"
+                    {...register("lastName")}
+                  />
+                </div>
+                {errors.username && (
+                  <span className="text-brand-red text-sm">
+                    {errors.username?.message}
+                  </span>
+                )}
+              </div>
             </div>
           )}
 
@@ -164,6 +186,30 @@ const LoginRegisterForm = ({
             {content.btnText}
           </button>
         </form>
+
+        <div className="flex flex-col items-center gap-4 mt-4 w-full">
+          <div className="w-full flex items-center">
+            <div className="flex-grow border-t"></div>
+            <span className="px-2 text-gray-500 dark:text-brand-cream/50">or continue with</span>
+            <div className="flex-grow border-t"></div>
+          </div>
+          <div className="flex gap-4 w-full">
+            <button
+              onClick={() => {}}
+              className="w-full py-2 px-4 border rounded-md flex items-center justify-center gap-2 cursor-pointer text-gray-600 dark:text-brand-cream"
+            >
+              <Google size="32" variant="Bold" className="h-5 w-5" />
+              Google
+            </button>
+            <button
+              onClick={() => {}}
+              className="w-full py-2 px-4 border rounded-md flex items-center justify-center gap-2 cursor-pointer text-gray-600 dark:text-brand-cream"
+            >
+              <Facebook size="32" variant="Bold" className="h-5 w-5" />
+              Facebook
+            </button>
+          </div>
+        </div>
 
         <div className="flex items-center gap-2 mt-4">
           <span className="text-sm text-gray-600 dark:text-brand-cream">
