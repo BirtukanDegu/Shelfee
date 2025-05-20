@@ -1,18 +1,31 @@
 import { z } from 'zod';
 
 export const authFormSchema = (type: string) => z.object({        
-      username: type === 'login'
-        ? z.string().optional()
-        : z.string()
-            .nonempty({ message: "Username is required" })
-            .min(3, { message: "Username must be at least 3 characters" })
-            .max(20, { message: "Username can't exceed 20 characters" })
-            .regex(/^[a-zA-Z0-9_]+$/, { message: "Username can only contain letters, numbers, and underscores" })
-            .regex(/^[^\d].*$/, { message: "Username cannot start with a number" })
-            .regex(/^[^\W_].*$/, { message: "Username cannot start with a special character" })
-            .regex(/^[^\s].*$/, { message: "Username cannot start with a space" }),
-            
-  
+    firstName: type === 'login'
+      ? z.string().optional()
+      : z.string()
+          .min(3, { message: "First name must be at least 3 characters" })
+          .max(50, { message: "First name can't exceed 50 characters" })
+          .regex(/^[a-zA-Z\s'-]+$/, { message: "First name can only contain letters, spaces, hyphens, and apostrophes" }), 
+
+    lastName: type === 'login'
+      ? z.string().optional()
+      : z.string()
+          .min(3, { message: "Last name must be at least 3 characters" })
+          .max(50, { message: "Last name can't exceed 50 characters" })
+          .regex(/^[a-zA-Z\s'-]+$/, { message: "Last name can only contain letters, spaces, hyphens, and apostrophes" }),            
+
+    username: type === 'login'
+      ? z.string().optional()
+      : z.string()
+          .nonempty({ message: "Username is required" })
+          .min(3, { message: "Username must be at least 3 characters" })
+          .max(20, { message: "Username can't exceed 20 characters" })
+          .regex(/^[a-zA-Z0-9_]+$/, { message: "Username can only contain letters, numbers, and underscores" })
+          .regex(/^[^\d].*$/, { message: "Username cannot start with a number" })
+          .regex(/^[^\W_].*$/, { message: "Username cannot start with a special character" })
+          .regex(/^[^\s].*$/, { message: "Username cannot start with a space" }),
+                   
       email: z.string()
         .nonempty({ message: "Email is required" })
         .email({ message: "Invalid email address" }),
