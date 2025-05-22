@@ -8,7 +8,7 @@ import { useContext, useEffect, useState } from "react";
 
 export const SaveBookButton = () => {
   const { Book } = useData();
-  const { books, setBooks } = useContext<BookContextType>(BookContext);
+  const { setBooks } = useContext<BookContextType>(BookContext);
   const [status, setStatus] = useState<"saved" | "saving" | "not-saved">(
     "not-saved"
   );
