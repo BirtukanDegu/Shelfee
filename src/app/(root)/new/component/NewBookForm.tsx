@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { BookDataPreview } from "@/app/new/component/BookDataPreview";
+import { BookDataPreview } from "@/app/(root)/new/component/BookDataPreview";
 import { useForm, FormProvider } from "react-hook-form";
 import { useEffect, useState } from "react";
 import { UserInputForm } from "@/components/bookDetail/form/userInputForm";

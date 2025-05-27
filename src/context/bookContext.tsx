@@ -37,13 +37,9 @@ const BooksProvider = ({ children }: { children: ReactNode }) => {
  
     return (
         <BookContext.Provider value={contextData}>
-            {loading ? (
-                <div className="flex items-center justify-center h-screen">
-                    <LoaderIcon className="mr-2 h-6 w-6 animate-spin" />
-                </div>
-            ) : (
-                children
-            )}
+
+                {children}
+
         </BookContext.Provider>
     );
 };
