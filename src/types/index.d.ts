@@ -1,9 +1,38 @@
+interface ApiErrorResponse {
+  data?: unknown; 
+  errors?: {
+    [field: string]: string; 
+  };
+}
+
 interface AuthDataType {
   firstName?: string;
   lastName?: string;
-  email: string;
-  password: string;
+  email?: string;
+  password?: string;
   passwordConfirmation?: string;
+}
+
+interface User {
+  id: number;
+  email: string;
+  provider: string;
+  socialId: string;
+  firstName: string;
+  lastName: string;
+  photo: string;
+  role: string;
+  status: string;
+  createdAt: string;
+  updatedAt: string;
+  deletedAt: string | null;
+}
+
+interface AuthState {
+  token: string;
+  refreshToken: string;
+  tokenExpires: number;
+  user: User;
 }
 
 interface BookType {

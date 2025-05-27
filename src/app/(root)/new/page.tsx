@@ -1,4 +1,4 @@
-import { NewBookForm } from "@/app/new/component/NewBookForm";
+import { NewBookForm } from "@/app/(root)/new/component/NewBookForm";
 import { Suspense } from "react";
 
 const Page = () => (

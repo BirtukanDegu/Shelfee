@@ -3,6 +3,8 @@
 import React from 'react';
 import { useRouter } from 'next/navigation';
 import LoginRegisterForm from '@/components/LoginRegisterForm';
+import { toast } from 'sonner';
+import { useLoginMutation } from '@/redux/services/authApiSlice';
 
 const content = {
   type: 'login',
@@ -13,15 +15,33 @@ const content = {
 
 const SignIn = () => {
   const router = useRouter();
+  const [login, { isLoading }] = useLoginMutation();
 
-  function handleLogin(data: AuthDataType) {
-    router.push('/profile');
-    console.log("Login data:", data);
+
+  async function handleLogin(data: AuthDataType) {
+    const requestTimeout = setTimeout(() => {
+      toast.warning("Your internet connection seems slow");
+    }, 5000);
+
+    const userData = {
+      email: data.email,
+      password: data.password,
+    };
+
+    try {
+      const data = await login(userData).unwrap();
+      console.log("data:", data);
+      clearTimeout(requestTimeout);
+      router.push('/my-shelf');
+      toast.success("You have successfully logged in.");
+    } catch (err) {
+      clearTimeout(requestTimeout);
+    }
   }
 
   return (
     <div className='flex items-center justify-center h-screen w-full'>
-      <LoginRegisterForm content={content} submitHandler={handleLogin} />
+      <LoginRegisterForm content={content} submitHandler={handleLogin} isLoading={isLoading}/>
     </div>
   );
 };
