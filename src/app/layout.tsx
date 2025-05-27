@@ -3,6 +3,7 @@ import "./globals.css";
 import { marcellus } from "@/fonts/font";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import CustomProvider from "@/context/provider";
+import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
   title: "Shelfee",
@@ -20,6 +21,7 @@ export default function RootLayout({
         className={`${marcellus.className} antialiased scrollbar`}
         suppressHydrationWarning
       >
+        <Toaster position="top-right" richColors closeButton />
         <CustomProvider>
           <div className="fixed top-4 right-4 z-50">
             <ThemeToggle/>
