@@ -38,21 +38,15 @@ export const authApiSlice = apiSlice.injectEndpoints({
       }),
     }),
 
-    getAuthData: builder.query<User, { token: string }>({
-      query: ({ token }) => ({
+    getAuthData: builder.query({
+      query: () => ({
         url: '/api/v1/auth/me',
-        method: 'GET',
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
+        method: 'GET'
       }),
     }),
 
     logout: builder.mutation({
-      query: () => ({
-        url: "/api/v1/auth/logout",
-        method: "POST",
-      }),
+      query: () => "/api/v1/auth/logout"
     }),
 
     forgotPassword: builder.mutation({

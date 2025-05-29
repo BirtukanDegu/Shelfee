@@ -16,7 +16,7 @@ export const rtkQueryErrorLogger: Middleware =
 
       if (payload?.data) {
         const apiError = payload.data;
-        const mainMessage = "Error occurred while processing your request.";
+        const mainMessage = "Oops!";
         let fieldErrorMessages = '';
 
         if (apiError.errors && Object.keys(apiError.errors).length > 0) {

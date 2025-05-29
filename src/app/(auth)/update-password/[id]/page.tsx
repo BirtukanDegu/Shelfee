@@ -43,8 +43,6 @@ export default function UpdatePassword({ params }: { params: Promise<{ id: strin
       toast.warning("Your internet connection seems slow");
     }, 5000);
 
-    console.log("dataa:", data)
-
     const userData = {
       password: data.password,
     };
