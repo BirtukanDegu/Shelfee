@@ -33,10 +33,9 @@ const SignUp = () => {
       const data = await registerUser(userData).unwrap();
       clearTimeout(requestTimeout);
 
-      if (data.success) {
-        toast.success("You have successfully registered. Please check your email to activate your account.");
-        router.push("/sign-in");
-      }
+      toast.success("You have successfully registered. Please check your email to activate your account.");
+      router.push("/sign-in");
+      
     } catch (err) {
       clearTimeout(requestTimeout);
     }

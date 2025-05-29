@@ -1,1 +1,1 @@
-export const url = "https://3fd7-102-213-69-109.ngrok-free.app"
+export const url = "http://ec2-13-53-130-3.eu-north-1.compute.amazonaws.com:3000"

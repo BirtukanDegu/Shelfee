@@ -2,7 +2,6 @@
 
 import { configureStore } from "@reduxjs/toolkit";
 import { apiSlice } from "./features/apiSlice";
-import authReducer from "./features/authSlice";
 import userReducer from "./features/userSlice";
 import { setupListeners } from "@reduxjs/toolkit/query";
 import { rtkQueryErrorLogger } from "./middleware/rtkQueryErrorLogger";
@@ -11,7 +10,6 @@ export const makeStore = () =>
   configureStore({
     reducer: {
       [apiSlice.reducerPath]: apiSlice.reducer,
-      auth: authReducer,
       user: userReducer,
     },
     middleware: (getDefaultMiddleware) =>
