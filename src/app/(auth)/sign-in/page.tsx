@@ -30,7 +30,6 @@ const SignIn = () => {
 
     try {
       const data = await login(userData).unwrap();
-      console.log("data:", data);
       clearTimeout(requestTimeout);
       router.push('/my-shelf');
       toast.success("You have successfully logged in.");
