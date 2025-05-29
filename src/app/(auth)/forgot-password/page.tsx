@@ -20,7 +20,6 @@ const ForgotPassword = () => {
       toast.warning("Your internet connection seems slow");
     }, 5000);
 
-    console.log("dataaaaaaaaa:", data)
     const userData = {
       email: data.email,
     };
