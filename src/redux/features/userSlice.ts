@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { setCookie, deleteCookie } from 'cookies-next';
+import { deleteCookie } from 'cookies-next';
 import { authApiSlice } from "../services/authApiSlice";
 import { getAuthCookie, setAuthCookie } from "@/lib/cookies";
 
