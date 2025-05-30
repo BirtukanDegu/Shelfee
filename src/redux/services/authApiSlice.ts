@@ -13,6 +13,17 @@ export const authApiSlice = apiSlice.injectEndpoints({
       }),
     }),
 
+    googleLogin: builder.mutation<
+      { token: string; refreshToken: string; tokenExpires: number; user: User }, 
+      { idToken: string } 
+    >({
+      query: ({ idToken }) => ({
+        url: '/api/v1/auth/google/login',
+        method: 'POST',
+        body: { idToken },
+      }),   
+    }), 
+
     register: builder.mutation({
       query: ({
         firstName,
@@ -57,15 +68,19 @@ export const authApiSlice = apiSlice.injectEndpoints({
       }),
     }),
 
-    checkResetPassword: builder.query({
-      query: (id) => `/api/v1/auth/reset/${id}`,
+    checkResetPassword: builder.mutation({
+      query: ({ hash }) => ({
+       url:  `/api/v1/auth/forgot/password/validate-hash`,
+       method: "POST",
+       body: { hash },
+      })
     }),
 
     changePassword: builder.mutation({
-      query: ({ old_password, new_password }) => ({
+      query: ({ password, hash }) => ({
         url: `/api/v1/auth/reset/password`,
         method: "POST",
-        body: { old_password, new_password },
+        body: { password, hash },
       }),
     }),
 
@@ -74,11 +89,12 @@ export const authApiSlice = apiSlice.injectEndpoints({
 
 export const {
   useLoginMutation,
+  useGoogleLoginMutation,
   useRegisterMutation,
   useActivateAccountMutation,
   useGetAuthDataQuery,
   useLogoutMutation,
   useForgotPasswordMutation,
-  useCheckResetPasswordQuery,
+  useCheckResetPasswordMutation,
   useChangePasswordMutation,
 } = authApiSlice;
