@@ -36,7 +36,7 @@ const SignUp = () => {
       toast.success("You have successfully registered. Please check your email to activate your account.");
       router.push("/sign-in");
       
-    } catch (_err) {
+    } catch {
       clearTimeout(requestTimeout);
     }
   }

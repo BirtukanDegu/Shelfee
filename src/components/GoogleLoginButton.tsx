@@ -11,8 +11,6 @@ type GoogleCredentialResponse = {
   clientId?: string;
 };
 
-type GoogleScriptError = Event & { message?: string };
-
 declare global {
     interface Window {
         google?: {
