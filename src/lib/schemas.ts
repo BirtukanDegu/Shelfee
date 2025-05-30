@@ -23,17 +23,17 @@ export const authFormSchema = (type: string) => z.object({
   
       password: type === 'forgotPassword'
         ? z.string().optional()
-        : (type === 'login' || type === 'resetPassword')
-          ? z.string().min(1, { message: "Password is required" }) 
-          : z.string()
+        : (type === 'register' || type === 'resetPassword')
+          ? z.string()
               .nonempty({ message: "Password is required" })
               .min(8, { message: "Password must be at least 8 characters" })
               .max(50, { message: "Password can't exceed 50 characters" })
               .regex(/[a-z]/, { message: "Password must contain at least one lowercase letter" })
               .regex(/[A-Z]/, { message: "Password must contain at least one uppercase letter" })
               .regex(/\d/, { message: "Password must contain at least one number" })
-              .regex(/[\W_]/, { message: "Password must contain at least one special character" }),
-  
+              .regex(/[\W_]/, { message: "Password must contain at least one special character" })
+          : z.string().min(1, { message: "Password is required" }), 
+          
       confirmPassword: (type === 'login' || type === 'forgotPassword')
         ? z.string().optional()
         : z.string()
