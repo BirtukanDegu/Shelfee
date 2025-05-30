@@ -95,6 +95,31 @@ const userSlice = createSlice({
         }
       )
       .addMatcher(
+        authApiSlice.endpoints.googleLogin.matchFulfilled,
+        (state, { payload }) => {
+          setAuthCookie(payload.token, 'auth_token', 60 * 2); 
+          setAuthCookie(payload.refreshToken, 'refresh_token', 60 * 60 * 24 * 7);
+          state.token = payload.token;
+          state.refreshToken = payload.refreshToken;
+          state.tokenExpires = payload.tokenExpires;
+          state.user = {
+            id: payload.user.id,
+            email: payload.user.email,
+            provider: payload.user.provider,
+            socialId: payload.user.socialId,
+            firstName: payload.user.firstName,
+            lastName: payload.user.lastName,
+            photo: payload.user.photo, 
+            role: payload.user.role, 
+            status: payload.user.status,
+            createdAt: payload.user.createdAt,
+            updatedAt: payload.user.updatedAt,
+            deletedAt: payload.user.deletedAt,
+          };
+          state.isAuthenticated = true;
+        }
+      )      
+      .addMatcher(
         authApiSlice.endpoints.getAuthData.matchFulfilled,
         (state, { payload }) => {
           state.token = getAuthCookie('auth_token') || "";
