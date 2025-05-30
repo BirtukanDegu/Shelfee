@@ -1,9 +1,9 @@
 import { isRejectedWithValue } from '@reduxjs/toolkit';
-import type { Middleware, MiddlewareAPI } from '@reduxjs/toolkit';
+import type { Middleware } from '@reduxjs/toolkit';
 import { toast } from 'sonner';
 
 export const rtkQueryErrorLogger: Middleware =
-  (_: MiddlewareAPI) => (next) => (action) => {
+  () => (next) => (action) => {
 
     if (isRejectedWithValue(action)) {
       console.warn('API Request Rejected:', action);
