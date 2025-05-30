@@ -28,7 +28,7 @@ const ForgotPassword = () => {
       await forgotPassword(userData).unwrap();
       clearTimeout(requestTimeout);
       toast.success("Password reset link sent to your email!");
-    } catch (_err) {
+    } catch {
       clearTimeout(requestTimeout);
     }
   }
