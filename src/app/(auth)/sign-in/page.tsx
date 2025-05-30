@@ -33,7 +33,7 @@ const SignIn = () => {
       clearTimeout(requestTimeout);
       router.push('/my-shelf');
       toast.success("You have successfully logged in.");
-    } catch (_err) {
+    } catch {
       clearTimeout(requestTimeout);
     }
   }
