@@ -10,6 +10,7 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
+import GoogleLoginButton from "./GoogleLoginButton";
 
 interface LoginRegisterFormProps {
   content: {
@@ -65,6 +66,10 @@ const LoginRegisterForm = ({
       } else if (content.type === "forgotPassword") {
         submitHandler({
           email: data.email,
+        })
+      } else if (content.type === "resetPassword") {
+        submitHandler({
+          password: data.password,
         })
       }
     } catch (error) {
@@ -222,6 +227,7 @@ const LoginRegisterForm = ({
 
           <button
             type="submit"
+            onClick={() => console.log("Form submitted")}
             className="w-full py-2 px-4 bg-brand-green text-white font-semibold rounded-md hover:bg-brand-purple/90 transition cursor-pointer"
           >
             {isLoading ? (
@@ -243,13 +249,10 @@ const LoginRegisterForm = ({
               <div className="flex-grow border-t"></div>
             </div>
             <div className="flex gap-4 w-full">
-              <button
-                onClick={() => {}}
-                className="w-full py-2 px-4 border rounded-md flex items-center justify-center gap-2 cursor-pointer text-gray-600 dark:text-brand-cream"
-              >
-                <Google size="32" variant="Bold" className="h-5 w-5" />
-                Google
-              </button>
+              <div>
+                <GoogleLoginButton />
+              </div>
+              
               <button
                 onClick={() => {}}
                 className="w-full py-2 px-4 border rounded-md flex items-center justify-center gap-2 cursor-pointer text-gray-600 dark:text-brand-cream"
