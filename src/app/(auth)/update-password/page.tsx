@@ -30,7 +30,7 @@ export default function UpdatePassword() {
 
   const [
     changePassword,
-    { isLoading: isChangingPassword, error: changePasswordError },
+    { isLoading: isChangingPassword, error: _changePasswordError },
   ] = useChangePasswordMutation();
 
   useEffect(() => {
@@ -43,7 +43,7 @@ export default function UpdatePassword() {
       try {
         await checkHash({ hash }).unwrap();
         setIsHashValid(true);
-      } catch (err) {
+      } catch (_err) {
         setIsHashValid(false);
         setTimeout(() => {
           router.replace('/forgot-password');
@@ -66,7 +66,7 @@ export default function UpdatePassword() {
       clearTimeout(requestTimeout);
       toast.success('Password changed successfully!');
       router.push('/sign-in');
-    } catch (err) {
+    } catch (_err) {
       clearTimeout(requestTimeout);
     }
   }
