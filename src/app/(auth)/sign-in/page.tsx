@@ -29,11 +29,11 @@ const SignIn = () => {
     };
 
     try {
-      const data = await login(userData).unwrap();
+      await login(userData).unwrap();
       clearTimeout(requestTimeout);
       router.push('/my-shelf');
       toast.success("You have successfully logged in.");
-    } catch (err) {
+    } catch (_err) {
       clearTimeout(requestTimeout);
     }
   }

@@ -25,10 +25,10 @@ const ForgotPassword = () => {
     };
 
     try {
-      const data = await forgotPassword(userData).unwrap();
+      await forgotPassword(userData).unwrap();
       clearTimeout(requestTimeout);
       toast.success("Password reset link sent to your email!");
-    } catch (err) {
+    } catch (_err) {
       clearTimeout(requestTimeout);
     }
   }
