@@ -70,6 +70,6 @@ export const apiSlice = createApi({
     reducerPath: 'api',
     baseQuery: baseQueryWithReauth,
     refetchOnFocus: true,
-    endpoints: (_builder) => ({}), 
+    endpoints: (_) => ({}), 
     keepUnusedDataFor: 0
 });
