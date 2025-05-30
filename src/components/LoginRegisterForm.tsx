@@ -2,7 +2,7 @@
 
 import { AuthFormSchema, authFormSchema } from "@/lib/schemas";
 import { Eye, EyeClosed, Loader2, Lock, Mail, User } from "lucide-react";
-import { Google, Facebook } from 'iconsax-reactjs'
+import { Facebook } from 'iconsax-reactjs'
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";

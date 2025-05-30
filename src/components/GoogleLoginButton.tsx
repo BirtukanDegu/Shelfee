@@ -2,32 +2,40 @@
 
 import { useGoogleLoginMutation } from '@/redux/services/authApiSlice';
 import { useRouter } from 'next/navigation';
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useCallback } from 'react';
 import { toast } from 'sonner';
+
+type GoogleCredentialResponse = {
+  credential?: string;
+  select_by?: string;
+  clientId?: string;
+};
+
+type GoogleScriptError = Event & { message?: string };
 
 declare global {
     interface Window {
         google?: {
             accounts: {
                 id: {
-                    initialize: (config: { client_id: string; callback: (response: any) => void; auto_select?: boolean; ux_mode?: 'popup' | 'redirect'; }) => void;
-                    renderButton: (parentElement: HTMLElement, options: Record<string, any>) => void;
-                    prompt: (momentNotification?: (notification: any) => void) => void;
+                    initialize: (config: { client_id: string; callback: (response: GoogleCredentialResponse) => void; auto_select?: boolean; ux_mode?: 'popup' | 'redirect'; }) => void;
+                    renderButton: (parentElement: HTMLElement, options: Record<string, unknown>) => void;
+                    prompt: (momentNotification?: (notification: unknown) => void) => void;
                 };
             };
         };
-        handleGoogleCredentialResponse?: (response: any) => void;
+        handleGoogleCredentialResponse?: (response: GoogleCredentialResponse) => void;
     }
 }
 
 const GoogleLoginButton = () => {
     const router = useRouter();
     const googleClientId = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID;
-    const [googleLogin, { isLoading: isGoogleLoginLoading }] = useGoogleLoginMutation();
+    const [googleLogin] = useGoogleLoginMutation();
     const buttonDivRef = useRef<HTMLDivElement>(null);
     const scriptLoaded = useRef(false);
 
-    const handleGoogleSignInSuccess = async (idToken: string) => {
+    const handleGoogleSignInSuccess = useCallback(async (idToken: string) => {
         try {
             const result = await googleLogin({ idToken }).unwrap();
             console.log("Google Sign-In successful:", result);
@@ -36,10 +44,10 @@ const GoogleLoginButton = () => {
         } catch (error) {
             console.error("Google Sign-In API call failed:", error);
         }
-    };
+    }, [googleLogin, router]);
 
     useEffect(() => {
-        window.handleGoogleCredentialResponse = (response: any) => {
+        window.handleGoogleCredentialResponse = (response: GoogleCredentialResponse) => {
             if (response.credential) {
                 handleGoogleSignInSuccess(response.credential);
             } else {
@@ -62,7 +70,7 @@ const GoogleLoginButton = () => {
                 scriptLoaded.current = true;
                 initializeButton();
             };
-            script.onerror = (error) => {
+            script.onerror = (error: string | Event) => {
                 console.error("Failed to load Google GSI script.", error);
             };
             document.head.appendChild(script);
