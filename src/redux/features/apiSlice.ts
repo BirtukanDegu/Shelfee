@@ -3,12 +3,12 @@
 import type { BaseQueryFn, FetchArgs, FetchBaseQueryError } from '@reduxjs/toolkit/query';
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { Mutex } from 'async-mutex';
-import { url } from '@/constants/globalValues';
 import { getValidAuthTokens, setAuthCookie } from '@/lib/cookies';
 
 const mutex = new Mutex();
 
 const REMOVE_USER_ACTION_TYPE = 'user/removeUser';
+const url = process.env.NEXT_PUBLIC_BASE_URL;
 
 
 const baseQueryWithReauth: BaseQueryFn<string | FetchArgs, unknown, FetchBaseQueryError> = async (

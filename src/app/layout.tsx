@@ -21,7 +21,7 @@ export default function RootLayout({
         className={`${marcellus.className} antialiased scrollbar`}
         suppressHydrationWarning
       >
-        <Toaster position="top-right" richColors closeButton />
+        <Toaster position="top-right" richColors />
         <CustomProvider>
           <div className="fixed top-4 right-4 z-50">
             <ThemeToggle/>
